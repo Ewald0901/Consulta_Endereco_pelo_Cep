@@ -49,6 +49,8 @@ namespace Consulta_Endereco_Pelo_Cep
                 string retorno_requisicao = requisicao.RequisicaoCep(_url_Consulta);
                 RetornoConsulta retorno =  JsonConvert.DeserializeObject<RetornoConsulta>(retorno_requisicao);
 
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.Write("\nCep: " + retorno.cep + "\n"
                     + "Logradouro: " + retorno.logradouro + "\n"
                     + "Complemento: " + retorno.complemento + "\n"
@@ -59,6 +61,10 @@ namespace Consulta_Endereco_Pelo_Cep
                     + "Gia: " + retorno.gia + "\n"
                     + "DDD: " + retorno.ddd + "\n"
                     + "Siafi: " + retorno.siafi);
+               
+                Console.ResetColor();
+                Console.WriteLine("\n \nPressione uma tecla para encerrar");
+                Console.ReadKey();
 
             }
 
@@ -122,6 +128,8 @@ namespace Consulta_Endereco_Pelo_Cep
 
                 for (int i = 0; i < retorno.Count; i++)
                 {
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.Write("\n ==================================================" + (i + 1) + "º" + " Regsitro"
                    + "\nCep: " + retorno[i].cep + "\n"
                    + "Logradouro: " + retorno[i].logradouro + "\n"
@@ -135,6 +143,8 @@ namespace Consulta_Endereco_Pelo_Cep
                    + "Siafi: " + retorno[i].siafi
                    );
                 }
+                Console.ResetColor();
+                Console.WriteLine("\n \nPressione uma tecla para encerrar");
                 Console.ReadKey();
             }
         }
